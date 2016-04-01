@@ -14,7 +14,7 @@ word = random.choice(WORDS)
 correct = word
 
 # special params to tips&scores
-score = 7
+score = 5
 tips = 0
 
 jumble = ""
@@ -38,7 +38,7 @@ guest = input("\nplease input ur version: ")
 while guest != correct and guest != "" and score != 1:
     print("sorry, u're wrong")
     guest = input("\nplease input ur version: ")
-    score -= 1
+    score -= 2
 
 if guest == correct:
     print("""
