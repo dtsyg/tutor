@@ -12,6 +12,8 @@ import random
 WORDS = ("python", "anagram", "simple", "strong", "answer", "coaster")
 word = random.choice(WORDS)
 correct = word
+
+# special params to tips&scores
 score = 5
 tips = 0
 
