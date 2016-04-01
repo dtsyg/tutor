@@ -36,7 +36,6 @@ guest = input("\nplease input ur version: ")
 
 # tries to restore word
 while guest != correct and guest != "":
-    # tryin "if" with tries
     print("sorry, u're wrong")
     guest = input("\nplease input ur version: ")
 
