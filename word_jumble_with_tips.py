@@ -14,7 +14,7 @@ word = random.choice(WORDS)
 correct = word
 
 # special params to tips&scores
-score = 5
+score = 7
 tips = 0
 
 jumble = ""
@@ -35,13 +35,15 @@ print("ur anagram = ' ", jumble, " '")
 guest = input("\nplease input ur version: ")
 
 # tries to restore word
-while guest != correct and guest != "":
+while guest != correct and guest != "" and score != 1:
     print("sorry, u're wrong")
     guest = input("\nplease input ur version: ")
+    score -= 1
 
 if guest == correct:
     print("""
                                 U'RE WINNER!
                 thanks for playing; like, share, retweet""")
+    print ("\nu earned ", score, "scores!")
 
 input("\npress any key to exit")
