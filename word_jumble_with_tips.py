@@ -44,6 +44,9 @@ if guest == correct:
     print("""
                                 U'RE WINNER!
                 thanks for playing; like, share, retweet""")
-    print ("\nu earned ", score, "scores!")
+    print ("""
+    			u'r earned """, score, """scores!
+
+    				""")
 
 input("\npress any key to exit")
