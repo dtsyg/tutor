@@ -15,7 +15,7 @@ correct = word
 
 # special params to tips&scores
 score = 5
-tips = 0
+tips = ""
 
 jumble = ""
 
@@ -36,16 +36,18 @@ guest = input("\nplease input ur version: ")
 
 # tries to restore word
 while guest != correct and guest != "" and score != 1:
-    print("sorry, u're wrong")
-    guest = input("\nplease input ur version: ")
-    score -= 2
+	print("sorry, u're wrong")
+#	tips += word [position]
+#	print ("\nu'r tip now -- ", tips)
+	guest = input("\nplease input ur version: ")
+	score -= 2
 
 if guest == correct:
     print("""
                                 U'RE WINNER!
                 thanks for playing; like, share, retweet""")
     print ("""
-    			u'r earned """, score, """scores!
+    		u have earned """, score, """scores!
 
     				""")
 
