@@ -1,0 +1,14 @@
+part_4:
+
+coin                    +
+fortune_cookies         +
+magic_number            +
+num                     +
+===
+
+part_5:
+
+counter                 +
+string_reverse          +
+word_jumble_with_tips   -
+quiz
