@@ -14,8 +14,10 @@ word = random.choice(WORDS)
 correct = word
 
 # special params to tips&scores
+tries = 0
 score = 5
-tips = ""
+hint = ""
+
 
 jumble = ""
 
@@ -29,20 +31,28 @@ print("""
                                 WILLKOMMEN!
                             LET'S START THE GAME!
 u have to rearrange the letters in word, so would happen is the right word
+                      u have 5 tries and maximum 5 scores
+                          for each hints u lose 1 scores
      (press "Enter" (without ur version), if u want leave the game)
       """)
-print("ur anagram = ' ", jumble, " '")
+print("\nur anagram = ' ", jumble," '")
 guest = input("\nplease input ur version: ")
 
 # tries to restore word
-while guest != correct and guest != "" and score != 1:
-	print("sorry, u're wrong")
-#	tips += word [position]
-#	print ("\nu'r tip now -- ", tips)
-	guest = input("\nplease input ur version: ")
-	score -= 2
+while guest.lower() != correct and guest != "" and tries != 4:
+    print("\nsorry, u're wrong")
+    hint += correct [tries]
+    print ("\nu'r tip now -- ", hint)
+    tries += 1
+    score -= 1
+    guest = input("please input ur version: ")
 
-if guest == correct:
+if tries == 4 and guest.lower() != correct:
+    print("""
+   sorry, u'r tries is over
+'please enter coin to Continue' """)
+
+if guest.lower() == correct:
     print("""
                                 U'RE WINNER!
                 thanks for playing; like, share, retweet""")
