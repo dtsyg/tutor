@@ -38,6 +38,7 @@ u have to rearrange the letters in word, so would happen is the right word
 
       """)
 print("ur anagram = ' ", jumble," '")
+
 guest = input("\nplease input ur version: ")
 
 # tries to restore word
