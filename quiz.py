@@ -44,9 +44,9 @@ while word:
 	else:
 		print ("\nYEP")
 
-word = input ("please input ur version of estimated word : ")
+word = input ("\nplease input ur version of estimated word : ")
 
-if word == correct:
+if word.lower() == correct:
 	print ("""
 		GRATZ!
 	YOU'RE RIGHT!
@@ -56,7 +56,5 @@ else:
 		SORRY,
 but u're typicaly dumbass!
 		""")
-
-
 
 input("\npress any key to exit")
