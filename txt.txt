@@ -10,5 +10,5 @@ part_5:
 
 counter                 +
 string_reverse          +
-word_jumble_with_tips   -
-quiz					-
+word_jumble_with_tips   +
+quiz					+

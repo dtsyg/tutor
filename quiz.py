@@ -9,11 +9,9 @@ import random
 
 # parameterized main params
 WORDS = ("one", "two", "three", "four", "five")
-tries = 0
-lett = ""		# letter @ for
-user_lett = ""	# user input
+tries = 0		# hints
+user_lett = None	# user input
 word = "empty"	# user input
-i = 0
 
 # initialize quiz-word
 correct = random.choice (WORDS)
@@ -25,36 +23,44 @@ print ("""
 
 					welcome to quiz-game,
 	  			  try to guess hidden word
-u have 5 attempts to find out whether there is such letter in the word
-	(press "Enter" (without ur version), if u want leave the game))
+you have 5 attempts to find out whether there is such letter in the word
+  if you don't want use a hint -- press "Enter" without your version,
 
-					
-			in ur hidden word """, num, """ letters
-						good luck (;
+			in your hidden word """, num, """ letters
+						good luck (:
 
 	""")
 
-while word:
+#letter validate
+while tries < 5:
 	user_lett = input ("\nplease input the estimated letter : ")
-	for lett in correct:
-		if user_lett != lett:
-			i = 1
-	if i == 1:
-		print ("\nNOPE")
+	if user_lett:
+		if user_lett.lower() in correct:
+			print ("\nYEP")
+			tries += 1
+		else:
+			print ("\nNOPE")
+			tries += 1
 	else:
-		print ("\nYEP")
+		break
 
-word = input ("\nplease input ur version of estimated word : ")
+word = input ("\nplease input your version of estimated word : ")
 
-if word.lower() == correct:
-	print ("""
-		GRATZ!
-	YOU'RE RIGHT!
-		""")
+#word validate
+if word:
+    if word.lower() == correct:
+        print ("""
+            GRATZ!
+        YOU'RE RIGHT!
+            """)
+    elif word.lower() != correct:
+        print ("""
+            SORRY,
+    but you're typicaly dumbass!
+            """)
 else:
-	print ("""
-		SORRY,
-but u're typicaly dumbass!
-		""")
+    print("""
+      GOODBYE!
+    """)
 
 input("\npress any key to exit")
