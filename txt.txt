@@ -1,4 +1,4 @@
-part_4:
+part_3:
 
 coin                    +
 fortune_cookies         +
@@ -6,9 +6,26 @@ magic_number            +
 num                     +
 ===
 
-part_5:
+part_4:
 
 counter                 +
 string_reverse          +
 word_jumble_with_tips   +
 quiz					+
+===
+
+part_5:
+
+words_list              -
+character_gen           -
+whois_your_daddy        -
+grand_dad               -
+===
+
+part_6:
+
+ask_number              -
+magic_number_v2         -
+magic_number_v3         -
+computer_move           -
+===
