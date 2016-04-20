@@ -16,7 +16,7 @@ quiz					+
 
 part_5:
 
-words_list              -
+words_list              +
 character_gen           -
 whois_your_daddy        -
 grand_dad               -

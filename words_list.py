@@ -1,36 +1,31 @@
 """
 program printed all words in list (random sort)
 all words, one word -- one print
+v1 // simple
+v2 // with user-input list
 """
 
 import random
 
 # parametrization
-WORDS = ("one", "two", "three", "four", "five")
-#         0    1    2    3    4
-used =""
-words = []
-j =0
+WORDS = ["one", "two", "two", "six", "three", "four", "five", "five"]
+uniq = []
 
+print("""
+old words-list: """, WORDS)
+
+# remove duplicates
 for word in WORDS:
-    print("\n", word)
-    i = random.randrange(0, len(WORDS) + 1)
-    temp = WORDS[i]
-    if temp not in used:
-        words += temp
-#        j += 1
-        used += temp
+    if word not in uniq:
+        uniq.append(word)
+
+# shuffle
+random.shuffle(uniq)
 
 
-print ("""
-old words-list: """)
-for word in WORDS:
-    print (word, end=", ")
-print ("""
-
-new words-list:""")
-for word in words:
-    print (word, end=", ")
+# output
+print("""
+new words-list: """, uniq)
 
 input("""
 
