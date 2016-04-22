@@ -19,7 +19,7 @@ part_5:
 words_list              +
 character_gen           -
 whois_your_daddy        -
-grand_dad               -
+granddad               -
 ===
 
 part_6:

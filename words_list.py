@@ -8,7 +8,7 @@ v2 // with user-input list
 import random
 
 # parametrization
-WORDS = ["one", "two", "two", "six", "three", "four", "five", "five"]
+WORDS = ("one", "two", "two", "six", "three", "four", "five", "five")
 uniq = []
 
 print("""
