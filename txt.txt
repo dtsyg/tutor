@@ -17,9 +17,9 @@ quiz					+
 part_5:
 
 words_list              +
-character_gen           -
-whois_your_daddy        -
-granddad               -
+char_maker              -
+whois_your_daddy        +
+granddad                -
 ===
 
 part_6:

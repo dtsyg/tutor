@@ -15,6 +15,8 @@ while user_choice != "0":
     print(
     """
 
+
+
     "WHOIS YOUR DADDY ?"
 
     ==============================
@@ -25,12 +27,18 @@ while user_choice != "0":
     ||  4   //  replace pairs   ||
     ==============================
     """)
-    user_choice = input("enter your choice: ")
+    user_choice = input(
+            """
+            enter your choice:
+            """)
     print()
 
 # exit
     if user_choice == "0":
-        print("goodbye!")
+        print(
+            """
+            goodbye!
+            """)
 
 # view
     elif user_choice == "1":
@@ -48,20 +56,20 @@ while user_choice != "0":
 # add
     elif user_choice == "2":
         son = input(
-                """
-                please enter son name:
-                """)
+            """
+            please enter son name:
+            """)
         if son not in pairs:
             father = input(
-                """
-                please enter father name:
-                """)
+            """
+            please enter father name:
+            """)
             pairs[son] = father
         else:
             print(
-                """
-                sorry, but your son/father pair alredy exist
-                """)
+            """
+            sorry, but your son/father pair alredy exist
+            """)
 # delete
     elif user_choice == "3":
         son = input(
