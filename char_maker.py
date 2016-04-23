@@ -9,26 +9,33 @@
 user_choice = None
 char_pool = 30
 strength = 0
-agility = 0
+dexterity = 0
 wisdom = 0
 lucky = 0
 
 while user_choice != "0":
     print(
-        """
+    """
 
+    "CHARACTER MAKER"
+    0   //        exit
+    1   //  increase parameter
+    2   //  decrease parameter
+    """)
 
-        "CHARACTER MAKER"
+    print("your parameter pool = ", char_pool,
+          "\nstrength / ", strength,
+          "\ndexterity / ", dexterity,
+          "\nwisdom / ", wisdom,
+          "\nlucky / ", lucky)
+    user_choice = input("\nenter your choice: ")
 
-        ==================================
-        ||  0   //  exit                ||
-        ||  1   //  increase parameter  ||
-        ||  2   //  decrease parameter  ||
-        ==================================
+# exit
+    if user_choice == "0":
+        print(
+            """
+            goodbye!
+            """)
 
-        your parameter pool = """, char_pool
-        )
-    user_choice = input(
-        """
-        enter your choice:
-        """)
+#    if user_choice == "1":
+#        param_choice = input()
