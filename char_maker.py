@@ -1,41 +1,137 @@
 """
-Напишите программу «Генератор персонажей» для ролевой игры. Пользователю должно быть предоставлено
-30 пунктов, которые можно распределить между четырьмя характеристиками: Сила, Здоровье, Мудрость
-и Ловкость. Надо сделать так, чтобы пользователь мог не только брать эти пункты из общего «Пула», но и возвращать
-их туда из характеристик, которым он решит присвоить другие значения.
+Please write program "Character Generator". The user has 30 points (pool),
+which he can spend between the four characteristics: Strength, Wisdom, Dexterity и Lucky.
+The user can take and return points from the pool, and change alredy filled characteristics.
 """
 
 # parametrization
-user_choice = None
+user_menu = None
+user_key = None
+user_num = None
 char_pool = 30
-strength = 0
-dexterity = 0
-wisdom = 0
-lucky = 0
+param = {"strength": 5,
+         "wisdom": 5,
+         "dexterity": 5,
+         "lucky": 5,
+         }
 
-while user_choice != "0":
-    print(
-    """
+# user menu
+print(
+    '''
 
-    "CHARACTER MAKER"
-    0   //        exit
-    1   //  increase parameter
-    2   //  decrease parameter
-    """)
+              "CHARACTER MAKER"
 
-    print("your parameter pool = ", char_pool,
-          "\nstrength / ", strength,
-          "\ndexterity / ", dexterity,
-          "\nwisdom / ", wisdom,
-          "\nlucky / ", lucky)
-    user_choice = input("\nenter your choice: ")
 
-# exit
-    if user_choice == "0":
+    1   //           menu
+    2   //    show characteristic
+    3   //  increase characteristic
+    4   //  decrease characteristic
+    0   //           exit
+    ''')
+
+while user_menu != "0":
+
+    user_menu = input('''
+    enter your choice ("1" for menu): ''')
+
+    # menu call
+    if user_menu == "1":
+        print(
+    '''
+              "CHARACTER MAKER"
+
+
+    1   //           menu
+    2   //    show characteristic
+    3   //  increase characteristic
+    4   //  decrease characteristic
+    0   //           exit
+    ''')
+
+    # show characteristics
+    elif user_menu == "2":
+        print(
+              '''
+              ======================
+                 your pool = ''', char_pool,
+              '''
+
+                 strength  : ''', param["strength"],
+              '''
+                 wisdom    : ''', param["wisdom"],
+              '''
+                 dexterity : ''', param["dexterity"],
+              '''
+                 lucky     : ''', param["lucky"], '''
+              ======================
+              '''
+        )
+
+    # edit (increase)
+    elif user_menu == "3":
+        user_key = input(
+            '''
+    please enter the name of the characterictis (strength / wisdom / dexterity / lucky) : ''')
+        while user_key not in param:
+            print(
+                '''
+                this characteristics does not exist!
+                '''
+            )
+            user_key = input(
+                '''
+    please enter the name of the characteristics (strength / wisdom / dexterity / lucky) : ''')
+
+        user_num = int(input(
+            '''
+        how much points added: '''))
+
+        if user_num <= char_pool:
+            char_pool -= user_num
+            param[user_key] += user_num
+            print(param.get(user_key))
+        else:
+            print('''
+                you don't have as many points! you can type less or decrease other characteristics''')
+
+    # edit (decrease)
+    elif user_menu == "4":
+        user_key = input(
+            '''
+    please enter the name of the characterictis (strength / wisdom / dexterity / lucky) : ''')
+        while user_key not in param:
+            print(
+                '''
+                this characteristics does not exist!
+                '''
+            )
+            user_key = input(
+                '''
+    please enter the name of the characteristics (strength / wisdom / dexterity / lucky) : ''')
+
+        user_num = int(input(
+            '''
+        how much points withdraw: '''))
+
+        if user_num <= param[user_key] - 1:
+                char_pool += user_num
+                param[user_key] -= user_num
+                print(param.get(user_key))
+        else:
+            print('''
+                number of point in characteristics cannot be less than one! you can type less or first increase this characteristic''')
+
+    # exit
+    elif user_menu == "0":
+        print(
+            '''
+            goodbye!
+            ''')
+
+    # uncorrect input
+    else:
         print(
             """
-            goodbye!
+            sorry, but your choice uncorrect
+                       try again
             """)
-
-#    if user_choice == "1":
-#        param_choice = input()
