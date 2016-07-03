@@ -9,6 +9,7 @@ user_menu = None
 user_key = None
 user_num = None
 char_pool = 30
+# dictionary for charactirestics
 param = {"strength": 5,
          "wisdom": 5,
          "dexterity": 5,

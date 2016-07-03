@@ -10,6 +10,7 @@ import random
 
 # parametrization
 WORDS = ("one", "two", "two", "six", "three", "four", "five", "five")
+
 user_words = []
 user_word = " "
 uniq_prep = []
